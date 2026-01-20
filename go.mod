@@ -3,6 +3,7 @@ module xyDbSqlite
 go 1.25.6
 
 require (
+	github.com/doobcontrol/gDb v1.0.1 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -14,7 +15,6 @@ require (
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
 	modernc.org/sqlite v1.44.2 // indirect
-	xyDb/xyDb v0.0.0-00010101000000-000000000000
 )
 
-replace xyDb/xyDb => ../gDb //only for local develop
+replace github.com/doobcontrol/gDb => ../gDb //only for local develop

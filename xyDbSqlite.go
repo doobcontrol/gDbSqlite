@@ -2,7 +2,7 @@ package xyDbSqlite
 
 import (
 	"database/sql"
-	"xyDb/xyDb"
+	"github.com/doobcontrol/gDb/xyDb"
 	_ "modernc.org/sqlite"
 )
 

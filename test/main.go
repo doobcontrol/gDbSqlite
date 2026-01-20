@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"xyDb/xyDb"
+	"github.com/doobcontrol/gDb/xyDb"
 	"xyDbSqlite"
 )
 
