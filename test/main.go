@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-	sAccess := xyDbSqlite.DbSqliteAccess{}
-	sAccess.DbDriverName = "sqlite"
+	xyDb.DService.DbAccess = &xyDbSqlite.DbSqliteAccess{}
 	dbStru := xyDb.DbStructure{
 		DbName: "test",
 		Tables: []xyDb.DbTable{
@@ -49,7 +48,7 @@ func main() {
 		},
 	}
 	initPars := map[string]string{xyDbSqlite.S_dbFile:"./test.db"}
-	connectString, err := sAccess.InitDb(initPars, dbStru)
+	connectString, err := xyDb.DService.Init(initPars, dbStru)
 	if err != nil {
 		fmt.Println("xyDb Library test error: ", err)
 	} else{
