@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/doobcontrol/gDb/xyDb"
-	"xyDbSqlite"
+	"github.com/doobcontrol/gDbSqlite/xyDbSqlite"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module xyDbSqlite
+module github.com/doobcontrol/gDbSqlite
 
 go 1.25.6
 
