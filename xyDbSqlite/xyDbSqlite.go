@@ -36,3 +36,7 @@ import (
 	dba.Db = db
     return initPars[S_dbFile], nil
  }
+ func (dba *DbSqliteAccess) SetConnect(connectString string) error {
+	dba.SetDriverName(S_sqliteDriverName)
+	return dba.DbAccess.SetConnect(connectString)
+}
