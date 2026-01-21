@@ -24,6 +24,7 @@ import (
 	if err != nil {
         return "", err
 	}
+	dScript += "PRAGMA foreign_keys = ON;"
 	if _, err = db.Exec(dScript); err != nil {
         return "", err
 	}
