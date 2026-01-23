@@ -12,9 +12,9 @@ import (
  type DbSqliteAccess struct{
     xyDb.DbAccess
  }
- func (dba *DbSqliteAccess) InitDb(initPars map[string]string, dbStructure xyDb.DbStructure) (string, error) {
+ func (dba *DbSqliteAccess) InitDb(initPars *map[string]string, dbStructure xyDb.DbStructure) (string, error) {
 	dba.SetDriverName(S_sqliteDriverName)
-	db, err := sql.Open(dba.DbDriverName, initPars[S_dbFile])
+	db, err := sql.Open(dba.DbDriverName, (*initPars)[S_dbFile])
 	if err != nil {
         return "", err
 	}
@@ -29,13 +29,13 @@ import (
         return "", err
 	}
 
-	db, err = sql.Open(dba.DbDriverName, initPars[S_dbFile])
+	db, err = sql.Open(dba.DbDriverName, (*initPars)[S_dbFile])
 	if err != nil {
         return "", err
 	}
 
 	dba.Db = db
-    return initPars[S_dbFile], nil
+    return (*initPars)[S_dbFile], nil
  }
  func (dba *DbSqliteAccess) SetConnect(connectString string) error {
 	dba.SetDriverName(S_sqliteDriverName)

@@ -48,7 +48,7 @@ func main() {
 		},
 	}
 	initPars := map[string]string{xyDbSqlite.S_dbFile:"./test.db"}
-	connectString, err := xyDb.DService.Init(initPars, dbStru)
+	connectString, err := xyDb.DService.Init(&initPars, dbStru)
 	if err != nil {
 		fmt.Println("xyDb Library test error: ", err)
 	} else{
