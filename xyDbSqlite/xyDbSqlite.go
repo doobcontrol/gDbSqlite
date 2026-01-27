@@ -39,5 +39,10 @@ import (
  }
  func (dba *DbSqliteAccess) SetConnect(connectString string) error {
 	dba.SetDriverName(S_sqliteDriverName)
-	return dba.DbAccess.SetConnect(connectString)
+
+	if err := dba.DbAccess.SetConnect(connectString); err != nil {
+		return err
+	}
+	
+	return dba.DbAccess.ExSql("PRAGMA foreign_keys = ON;")
 }
