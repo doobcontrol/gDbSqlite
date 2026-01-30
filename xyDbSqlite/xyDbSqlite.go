@@ -18,7 +18,6 @@ import (
 	if err != nil {
         return "", err
 	}
-	defer db.Close() // Defer closing the database connection until the main function finishes
 
     dScript, err := dba.DbScript(dbStructure)
 	if err != nil {
@@ -26,11 +25,6 @@ import (
 	}
 	dScript += "PRAGMA foreign_keys = ON;"
 	if _, err = db.Exec(dScript); err != nil {
-        return "", err
-	}
-
-	db, err = sql.Open(dba.DbDriverName, (*initPars)[S_dbFile])
-	if err != nil {
         return "", err
 	}
 
